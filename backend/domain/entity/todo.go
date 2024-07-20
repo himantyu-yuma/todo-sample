@@ -25,15 +25,15 @@ func NewTodo(title, description string) *Todo {
 	}
 }
 
-// TODOを完了済みにマークする
-func (t *Todo) MarkAsComplete() {
-	t.Completed = true
-	t.UpdatedAt = time.Now()
-}
+// // TODOを完了済みにマークする
+// func (t *Todo) MarkAsComplete() {
+// 	t.Completed = true
+// 	t.UpdatedAt = time.Now()
+// }
 
-// TODOのタイトルと説明を更新する
-func (t *Todo) Update(title, description string) {
-	t.Title = title
-	t.Description = description
-	t.UpdatedAt = time.Now()
-}
+// // TODOのタイトルと説明を更新する
+// func (t *Todo) Update(title, description string) {
+// 	t.Title = title
+// 	t.Description = description
+// 	t.UpdatedAt = time.Now()
+// }
