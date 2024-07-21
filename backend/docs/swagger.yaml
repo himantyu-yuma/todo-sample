@@ -1,0 +1,28 @@
+definitions:
+  handler.TodoRequest:
+    properties:
+      description:
+        type: string
+      title:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /todos:
+    post:
+      description: Create a new todo
+      parameters:
+      - description: Todo object that needs to be added
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.TodoRequest'
+      responses:
+        "201":
+          description: Created
+      summary: Create a new todo
+      tags:
+      - todos
+swagger: "2.0"
