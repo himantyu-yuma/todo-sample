@@ -4,6 +4,8 @@ import (
 	"context"
 	"todo-sample/domain/entity"
 	"todo-sample/usecase/repository"
+
+	"github.com/google/uuid"
 )
 
 type TodoUsecase interface {
@@ -26,7 +28,7 @@ func NewTodoUsecase(todoRepo repository.TodoRepository) TodoUsecase {
 }
 
 func (uc *todoUsecase) CreateTodo(ctx context.Context, title, description string) (*entity.Todo, error) {
-	todo := entity.NewTodo(title, description)
+	todo := entity.NewTodo(uuid.NewString(), title, description)
 	if err := uc.todoRepo.Create(ctx, todo); err != nil {
 		return nil, err
 	}
