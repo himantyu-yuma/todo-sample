@@ -15,8 +15,9 @@ type Todo struct {
 }
 
 // 新しいTODOアイテムを作成するファクトリ関数
-func NewTodo(title, description string) *Todo {
+func NewTodo(id, title, description string) *Todo {
 	return &Todo{
+		ID:          id,
 		Title:       title,
 		Description: description,
 		Completed:   false,
